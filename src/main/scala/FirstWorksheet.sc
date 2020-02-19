@@ -19,3 +19,4 @@ println(array.length)
 println(nums.length)
 println(name.substring(4,8))
 println(surname.trim())
+

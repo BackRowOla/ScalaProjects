@@ -27,7 +27,7 @@ object Main {
     newFoo(true)
 
     // Strings
-    println(endOfStrnig("Hello", 3))
+    println(endOfString("Hello", 3))
 
     // Strings 2
     println(fourParamStringMethod("Ha", "llo", 'a', 'e'))
@@ -36,10 +36,12 @@ object Main {
     println(operatorMethod(2, 3))
 
     // Conditionals
-    println(operatorMethod2(2, 5, bool = true))
+    print("Conditionals - 2nd Operation method: ")
+    println(operatorMethod2(2, 5, bool = false))
 
     // Conditionals 2
-    println(operatorMethod3(0, 0, bool = true))
+    print("Conditionals 2 - 3rd Operation method: ")
+    println(operatorMethod3(2, 12, bool = true))
 
     // Iteration
     iterationMethod("Hi", 3)
@@ -75,7 +77,7 @@ object Main {
 
   2
 
-  def endOfStrnig(word: String, index: Int): String = {
+  def endOfString(word: String, index: Int): String = {
     word.substring(word.length - index)
   }
 
@@ -88,28 +90,18 @@ object Main {
   def operatorMethod(x: Int, y: Int): Int = x + y
 
   def operatorMethod2(x: Int, y: Int, bool: Boolean): Int = {
-    if (!bool) {
-      return x * y
-    }
-
-    x + y
+    val output: Int = if (!bool) x * y else x + y
+    output
   }
 
   def operatorMethod3(x: Int, y: Int, bool: Boolean): Int = {
-    if (x == 0 && y == 0)
-      return 0
+    val output: Int = if (x == 0 && y == 0) 0
+    else if (x == 0) y
+    else if (y == 0) x
+    else if (!bool) x * y
+    else x + y
 
-    if (x == 0)
-      return y
-
-    if (y == 0)
-      return x
-
-    if (!bool) {
-      return x * y
-    }
-
-    x + y
+    output
   }
 
   def iterationMethod(word: String, num: Int): Unit = {
@@ -128,12 +120,15 @@ object Main {
      */
 
 
-    for (i <- 1 to num; j <- 1 to num) {
-      var emptyString = ""
-      print()
+    //    for (i <- 1 to num; j <- 1 to num) {
+    //      var emptyString = ""
+    //
+    //    }
+
+    for (i <- 1 to num) {
+
     }
 
   }
-
 
 }
